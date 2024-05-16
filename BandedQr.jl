@@ -5,8 +5,6 @@ using LinearAlgebra
 using libblastrampoline_jll
 using Base: require_one_based_indexing
 
-
-
 mutable struct BandedQrData{T<:FloatOrComplex}
     N :: Integer
     bu :: Integer
@@ -59,8 +57,6 @@ for (fname, elty) in ((:dtbsv_,:Float64),
         end
     end
 end
-
-
 
 # shift banded matrix copy
 function sbcopy!(X::Matrix{T}, Y::Matrix{T}, z::T, bu::Integer, bl::Integer, m::Integer, n::Integer) where T    

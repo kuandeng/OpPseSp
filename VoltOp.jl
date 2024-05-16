@@ -8,14 +8,12 @@ struct VoltOp{T<:FloatOrComplex} <: Op{T}
     side::Char
 end
 
-
 # definition of shift operator L - zI
 struct ShiftVoltOp{T<:FloatOrComplex} <: Op{T}
     voltOp::VoltOp{T}
     shift::FloatOrComplex
     qrData::BandedQrData{T}
 end
-
 
 # default constructor
 VoltOp(kernelCoeffs::Vector{T}, N::Int, dom::Domain, side::Char) where T = 

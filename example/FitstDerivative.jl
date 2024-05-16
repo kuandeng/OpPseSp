@@ -41,5 +41,7 @@ u1 = u1/Norm(u1)
 # compute the pseudospectra
 ops = Options(40, 1, 1e-14) 
 pse = PseSp(L, L_ad, u1, ptx, pty, ops) 
+
+# plot the pseudospectra
 level = -8:1:-1
 contour(ptx, pty, log10.(pse), levels = level)

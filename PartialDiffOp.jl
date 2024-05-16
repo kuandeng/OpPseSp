@@ -47,17 +47,3 @@ end
 
 # norm of function
 Norm(y::Fun{<:TensorSpace}) = sqrt(real(InnerProduct(y, y)))
-
-
-# T = ComplexF64
-# scale = 1.0;
-# eta = T(0.05);
-# d = Ultraspherical(0.5, -1..1)^2;
-# operator = -eta*Laplacian(d) + Derivative(d,[0, 1]);
-# operator_ad = -eta*Laplacian(d) - Derivative(d,[0, 1]);
-# B = Dirichlet(d);
-# valB = zeros(∂(d));
-# L = PartialDiffOp(operator, B, valB, 1e-3)
-# L_ad = PartialDiffOp(operator_ad, B, valB, 1e-3)
-# y = Fun(0.5+0.0im, d);
-# lanczos(L-(20.0+15im), L_ad-(20.0-15im), y)

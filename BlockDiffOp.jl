@@ -6,14 +6,9 @@ struct BlockDiffOp{T<:FloatOrComplex} <: Op{T}
     diff::Operator{T} # differential operator
     B::Operator  # boundary condition operator
     valB::Vector # boundary condition values
-    # qrData::Operator{T} # resolvent operator  
-    # BlockDiffOp{T}(diff::Operator{T}, B::Operator, valB::Vector) where T = new(diff, B, valB, qr([B; diff]))
 end
 
-# # default constructor
-# BlockDiffOp(diff::Operator{T}, B::Operator, valB::Vector) where T = BlockDiffOp{T}(diff, B, valB)
-
-
+# definition of shift operator L - zI
 struct ShiftBlockDiffOp{T<:FloatOrComplex} <: Op{T}
     blockDiffOp::BlockDiffOp{T}
     shift::FloatOrComplex
